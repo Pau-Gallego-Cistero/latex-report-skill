@@ -34,5 +34,3 @@ This project (the prompts, instructions, and `.tex` configuration files) is dist
 
 **⚠️ Trademark Disclaimer:**
 The `LogopequeUE.jpg` file included in the `assets/` folder contains the logo of the Universidad Europea. This logo is a registered trademark and the exclusive property of the institution. Its inclusion in this repository is for purely educational and typesetting purposes for students of said university. The logo is **NOT** covered by this repository's MIT license and must not be used for commercial purposes or outside the university scope without the express permission of the Universidad Europea.
-## 📝 Notas de diseño
-El prompt está optimizado para evitar alucinaciones en referencias bibliográficas y para forzar a la IA a reportar errores numéricos del usuario en lugar de alterarlos silenciosamente.
