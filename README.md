@@ -9,7 +9,7 @@ This repository contains a "Skill" (system instructions and assets) designed for
 - **Strict formatting control:** Forces the use of `siunitx` for units, manages indentation with `\noindent`, and properly structures figures and equations.
 - **Logo Management:** Modular block to easily include or remove the university logo.
 
-## Repository Structure
+## 📂 Repository Structure
 
 - `system_prompt.md`: The main prompt you should provide to the AI (Ideal for Claude Projects or Custom GPTs).
 - `assets/`: Folder containing the files the AI needs to read to build the final document.
@@ -17,7 +17,7 @@ This repository contains a "Skill" (system instructions and assets) designed for
   - `codigo-python.tex` / `codigo-mathematica.tex`: Conditional preamble blocks.
   - `LogopequeUE.jpg`: University logo.
 
-## Trigger Words
+## 🎯 Trigger Words
 
 To instruct Claude to activate this specific skill and formatting workflow, use the following keywords in your chat:
 - **`informe`**
@@ -40,9 +40,9 @@ If you use this skill in a local environment with command execution capabilities
 
 This skill was engineered with the assistance of Claude itself. By feeding the AI with many precise instructions, strict formatting rules, and the base LaTeX documents, Claude helped structure and refine the perfect system prompt. This meta-prompting approach ensures a highly robust skill that anticipates edge cases, handles conditional code formatting, and avoids common AI LaTeX hallucinations.
 
-## License and Copyright
+## 📄 License and Copyright
 
 This project (the prompts, instructions, and `.tex` configuration files) is distributed under the [MIT License](LICENSE). You are free to use, modify, and adapt this repository for your own purposes.
 
-**Trademark Disclaimer:**
+**⚠️ Trademark Disclaimer:**
 The `LogopequeUE.jpg` file included in the `assets/` folder contains the logo of the Universidad Europea. This logo is a registered trademark and the exclusive property of the institution. Its inclusion in this repository is for purely educational and typesetting purposes for students of said university. The logo is **NOT** covered by this repository's MIT license and must not be used for commercial purposes or outside the university scope without the express permission of the Universidad Europea.
