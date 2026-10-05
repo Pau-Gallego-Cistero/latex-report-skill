@@ -1,7 +1,6 @@
 # Claude Skills: LaTeX University Report Generator & PDF Renderer
 
-This repository contains two complementary "Skills" (system instructions and assets) designed for AI models like Claude. Their combined purpose is to automate the writing, typesetting, and visual rendering of Physics laboratory reports using a specific template from the Universidad Europea de Valencia (UEV).
-
+This repository contains two complementary "Skills" (system instructions and assets) designed for AI models like Claude. Their combined purpose is to automate the writing, typesetting, and visual rendering of Physics laboratory reports using a specific template, with a univeristy logo of your choosing.
 ## The Skills
 
 This workflow is divided into two distinct system prompts:
@@ -20,8 +19,8 @@ This workflow is divided into two distinct system prompts:
 
 ## 📂 Repository Structure
 
-- `informe.md`: The system prompt for the LaTeX code generation skill. (Previously named system_prompt.md).
-- `renderizado-pdf.md`: The system prompt for the visual PDF rendering skill.
+- `informe.md`: The system prompt for the LaTeX code generation skill. **(Note: This prompt/README is written in English)**. *(Previously named system_prompt.md).*
+- `renderizado-pdf.md`: The system prompt for the visual PDF rendering skill. **(Note: This prompt/README is written in Spanish)**.
 - `assets/`: Folder containing the files the AI needs to read to build the final document.
   - `plantilla.tex`: Base template.
   - `codigo-python.tex` / `codigo-mathematica.tex`: Conditional preamble blocks.
@@ -33,14 +32,15 @@ To instruct Claude to activate these specific skills, use the following keywords
 
 ### For the "informe" skill (Generation)
 - **`informe`**
-- **`LaTeX pdf`** (use this exact phrase; avoid using just "pdf" so Claude doesn't confuse it with generic tasks).
+- **`LaTeX pdf`** (use this exact phrase; avoid using just "pdf" so Claude doesn't confuse it with generic tasks. **Note:** Even though "informe" is a Spanish word, using the `LaTeX pdf` trigger word will activate this tool in English and **does not** require Spanish activation).
 
 ### For the "renderizado-pdf" skill (Rendering)
+*(Note: Because this tool is instructed in Spanish, all of its trigger words are in Spanish).*
 - **`renderizado`**
 - **`renderiza el informe`**
 - **`haz el renderizado`**
 - **`renderiza el main.tex`**
-*(Note: Do not trigger this step with generic "make a PDF" requests. Explicitly use the word "renderizado").*
+*(Note: Do not trigger this step with generic "make a PDF" requests. Explicitly use the Spanish word "renderizado").*
 
 ## How to Use (Two-Step Workflow)
 
@@ -48,7 +48,7 @@ To instruct Claude to activate these specific skills, use the following keywords
 1. Create a new Project in Claude.
 2. Copy the content of BOTH `informe.md` and `renderizado-pdf.md` into the "Custom Instructions" section of the project (or set them up as separate tools/skills if your environment allows it).
 3. Upload the `assets` folder (or its individual files) to the project's knowledge base.
-4. **Step 1 (Generate):** Ask Claude: *"Haz un **informe** de mi última práctica de física cuántica, aquí tienes los resultados..."*. Claude will generate the perfect `main.tex` and prepare the assets.
+4. **Step 1 (Generate):** Ask Claude: *"Haz un **informe** de mi última práctica de física cuántica, aquí tienes los resultados..."* (or ask in English using the **LaTeX pdf** trigger). Claude will generate the perfect `main.tex` and prepare the assets.
 5. **Step 2 (Render):** Once the `.tex` is ready, ask Claude: *"Ahora haz el **renderizado** del documento."* Claude will read the `.tex` file and output a visually accurate `main.pdf`.
 
 ### In Agent / CLI Environments
