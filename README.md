@@ -17,13 +17,21 @@ This repository contains a "Skill" (system instructions and assets) designed for
   - `codigo-python.tex` / `codigo-mathematica.tex`: Conditional preamble blocks.
   - `LogopequeUE.jpg`: University logo.
 
+## 🎯 Trigger Words
+
+To instruct Claude to activate this specific skill and formatting workflow, use the following keywords in your chat:
+- **`informe`**
+- **`LaTeX pdf`** (use this exact phrase; avoid using just "pdf" so Claude doesn't confuse it with generic PDF reading or editing tasks).
+
+Alternatively, you can just explicitly ask Claude to write a report as a `.tex` file based on an assignment, results, or a draft.
+
 ## How to Use
 
 ### In Claude Projects
 1. Create a new Project in Claude.
 2. Copy the content of `system_prompt.md` into the "Custom Instructions" section of the project.
 3. Upload the `assets` folder (or its individual files) to the project's knowledge base.
-4. Ask Claude: *"Write a report for my latest quantum physics lab, here are the results..."* and watch it generate the perfect `.tex` file.
+4. Ask Claude: *"Haz un **informe** de mi última práctica de física cuántica, aquí tienes los resultados..."* and watch it generate the perfect `.tex` file.
 
 ### In Agent / CLI Environments
 If you use this skill in a local environment with command execution capabilities, the AI will use `latexmk` to automatically compile the file and deliver the final `.pdf`.
