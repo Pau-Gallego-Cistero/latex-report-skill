@@ -1,0 +1,168 @@
+\documentclass[12pt, a4paper]{article}
+
+% =========================================================
+%  CONFIGURACION DEL INFORME  (lo unico que se edita al empezar)
+% =========================================================
+\newcommand{\asignatura}{Introduction to Artificial Intelligence}
+\newcommand{\titulo}{Report title}
+\newcommand{\autor}{Pau Gallego Cisteró}
+\newcommand{\universidad}{Universidad Europea de Valencia}
+\newcommand{\grado}{Grado en Física}
+
+% --- Paquetes ---
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{mathpazo}
+\usepackage{amsmath, amssymb, mathtools}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{booktabs}
+\usepackage{xcolor}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+\usepackage{hyperref}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{siunitx}
+\usepackage{cancel}
+
+\geometry{a4paper, top=2.5cm, bottom=3cm, left=2.5cm, right=2.5cm}
+
+% --- Colores ---
+\definecolor{UnizarBlue}{RGB}{0, 51, 102}
+\definecolor{DarkGray}{RGB}{100, 100, 100}
+
+% --- Macros utiles ---
+\newcommand{\parder}[2]{\frac{\partial #1}{\partial #2}}
+\newcommand{\Parder}[2]{\frac{\partial^2 #1}{\partial #2^2}}
+\newcommand{\parentesi}[1]{\left(#1\right)}
+\newcommand{\corchetes}[1]{\left[#1\right]}
+\newcommand{\laplace}{\mathcal{L}}
+\newcommand{\pregunta}[1]{%
+    \medskip \noindent {\color{UnizarBlue}\textbf{#1}}\par\smallskip
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%  LOGO UEV  -  INICIO  %%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%  QUE HACE ESTE BLOQUE:
+%    Pone el logo de la Universidad Europea (esquina inferior derecha) en
+%    TODAS las paginas del documento, incluida la portada.
+%
+%  COMO QUITAR EL LOGO (3 pasos, todo esta dentro de este bloque):
+%    1) Borra todo lo que hay entre la linea "LOGO UEV - INICIO" y la linea
+%       "LOGO UEV - FIN" (incluidas las lineas de banner).
+%    2) Ya no hace falta el archivo LogopequeUE.jpg junto al .tex.
+%    3) No hay que tocar nada mas: ningun otro punto del documento usa el logo.
+%
+%  COMO CAMBIARLO O MOVERLO:
+%    - Otro archivo de imagen: cambia el nombre en \newcommand{\logo}{...}
+%    - Mas grande / mas pequeno: cambia width=3cm en \includegraphics
+%    - Mas a la izquierda/derecha: cambia \hspace{-4.5cm}
+%    - Mas arriba/abajo: cambia \raisebox{1.5cm}
+%
+%  PAQUETE NECESARIO: eso-pic (se carga aqui mismo, solo para el logo)
+%
+\usepackage{eso-pic}                  % <- SOLO sirve para el logo
+
+\newcommand{\logo}{LogopequeUE.jpg}   % <- nombre del archivo del logo (junto al .tex)
+
+\AddToShipoutPictureBG{%              % <- "dibuja esto al fondo de CADA pagina"
+  \AtPageLowerLeft{%                  % <- origen: esquina inferior izquierda
+    \hspace{\paperwidth}%             %    ir al borde derecho de la hoja
+    \hspace{-4.5cm}%                  %    volver 4.5 cm (3 cm del logo + 1.5 cm de margen)
+    \raisebox{1.5cm}{%                %    subir 1.5 cm desde el borde inferior
+      \includegraphics[width=3cm]{\logo}% <- el logo, de 3 cm de ancho
+    }%
+  }%
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%  LOGO UEV  -  FIN  %%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% --- Titulos ---
+\titleformat{\section}
+  {\color{UnizarBlue}\Large\bfseries\scshape}{\thesection.}{1em}{}
+\titleformat{\subsection}
+  {\color{UnizarBlue}\large\bfseries}{\thesubsection.}{1em}{}
+
+% --- Cabecera y pie ---
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small\scshape \asignatura}
+\fancyfoot[C]{\thepage}
+\renewcommand{\headrulewidth}{0.5pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% --- Hipervinculos ---
+\hypersetup{
+    colorlinks=true,
+    linkcolor=UnizarBlue,
+    citecolor=UnizarBlue,
+    urlcolor=UnizarBlue,
+    pdftitle={\titulo},
+    pdfauthor={\autor}
+}
+
+% =========================================================
+\begin{document}
+
+\begin{titlepage}
+    \centering
+    \vspace*{1cm}
+    {\Large \scshape \universidad \par}
+    {\large \grado \par}
+    \vspace{1.5cm}
+    {\large \textbf{Subject:} \asignatura \par}
+    \vspace{0.5cm}
+    \rule{\linewidth}{0.5mm} \\[0.4cm]
+    {\Huge \bfseries \color{UnizarBlue} \titulo \par}
+    \rule{\linewidth}{0.5mm} \\[0.4cm]
+    \vspace{1.5cm}
+    \textbf{Author:} \\ \noindent \autor \\
+    \vspace{1cm}
+    \textbf{Date:} \\ \noindent \today
+    \vfill
+    \vspace{2cm}
+\end{titlepage}
+
+\tableofcontents
+\newpage
+
+\section{Summary and objectives} \label{sec:summary}
+\noindent
+% Contexto de 2-4 lineas + lista de objetivos concretos.
+\begin{itemize}
+    \item Objective 1.
+    \item Objective 2.
+\end{itemize}
+
+\section{Principles} \label{sec:principles}
+\noindent
+% Teoria minima: ecuaciones numeradas con \begin{equation} y \label.
+
+\section{Questions}
+\noindent \pregunta{Question 1 text.}
+\vspace{0.2cm}
+\noindent
+% Codigo:   SOLO si el informe lleva codigo: ver SKILL.md (anadir antes assets/codigo-python.tex o codigo-mathematica.tex al preambulo)
+% Figura:   \begin{figure}[H]\centering
+%             \includegraphics[width=0.55\textwidth]{Figures/nombre.png}
+%             \caption{Caption descriptivo con unidades.}\label{fig:nombre}
+%           \end{figure}
+
+\section{Conclusions}
+\noindent
+% Que se obtuvo, con numeros y unidades, y que limitaciones hay.
+
+\renewcommand{\refname}{}
+\section{References}
+\vspace{-2em}
+\begin{thebibliography}{9}
+\bibitem{ref1}
+Author. (Year). \textit{Title}. Source. Retrieved date, from \url{https://...}
+\end{thebibliography}
+
+\end{document}
