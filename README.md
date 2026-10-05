@@ -1,4 +1,4 @@
-# 🎓 Claude Skill: LaTeX University Report Generator
+# Claude Skill: LaTeX University Report Generator
 
 This repository contains a "Skill" (system instructions and assets) designed for AI models like Claude. Its purpose is to automate the writing and typesetting of Physics laboratory reports in LaTeX, using a specific template from the Universidad Europea de Valencia (UEV).
 
